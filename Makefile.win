@@ -1,0 +1,57 @@
+# Project: aeropuerto
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o coordenana.o angulo.o hora.o cavion.o avionpasajeros.o aviondcarga.o avionbombero.o coladeaviones.o aeropuerto.o $(RES)
+LINKOBJ  = main.o coordenana.o angulo.o hora.o cavion.o avionpasajeros.o aviondcarga.o avionbombero.o coladeaviones.o aeropuerto.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = aeropuerto.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before aeropuerto.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "aeropuerto.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+coordenana.o: coordenana.cpp
+	$(CPP) -c coordenana.cpp -o coordenana.o $(CXXFLAGS)
+
+angulo.o: angulo.cpp
+	$(CPP) -c angulo.cpp -o angulo.o $(CXXFLAGS)
+
+hora.o: hora.cpp
+	$(CPP) -c hora.cpp -o hora.o $(CXXFLAGS)
+
+cavion.o: cavion.cpp
+	$(CPP) -c cavion.cpp -o cavion.o $(CXXFLAGS)
+
+avionpasajeros.o: avionpasajeros.cpp
+	$(CPP) -c avionpasajeros.cpp -o avionpasajeros.o $(CXXFLAGS)
+
+aviondcarga.o: aviondcarga.cpp
+	$(CPP) -c aviondcarga.cpp -o aviondcarga.o $(CXXFLAGS)
+
+avionbombero.o: avionbombero.cpp
+	$(CPP) -c avionbombero.cpp -o avionbombero.o $(CXXFLAGS)
+
+coladeaviones.o: coladeaviones.cpp
+	$(CPP) -c coladeaviones.cpp -o coladeaviones.o $(CXXFLAGS)
+
+aeropuerto.o: aeropuerto.cpp
+	$(CPP) -c aeropuerto.cpp -o aeropuerto.o $(CXXFLAGS)
